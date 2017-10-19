@@ -1,0 +1,7 @@
+<?php
+
+
+Route::group(['prefix' => '$LOWER_NAME$', 'namespace' => '$MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Controllers\Web', 'middleware' => ['web']], function()
+{
+	Route::get('/', '$STUDLY_NAME$Controller@index');
+});

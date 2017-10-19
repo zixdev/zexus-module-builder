@@ -1,0 +1,62 @@
+<?php namespace DummyNamespace;
+
+use Zix\PluginName\Entities\ModelName;
+use Zix\PluginBuilder\Support\Traits\ApiResponses;
+use Zix\PluginBuilder\Support\Traits\CrudControllerTrait;
+use Zix\PluginName\Events\ModelName\ModelNameCreatedEvent;
+use Zix\PluginName\Events\ModelName\ModelNameUpdatedEvent;
+use Zix\PluginName\Http\Requests\ModelName\ModelNameCreateRequest;
+use Zix\PluginName\Http\Requests\ModelName\ModelNameUpdateRequest;
+
+/**
+ * Class DummyClass
+ * @property ModelName model
+ * @package Zix\PluginName\Http\Controllers
+ */
+class DummyClass
+{
+    use ApiResponses, CrudControllerTrait;
+
+    /**
+     * TestController constructor.
+     * @param ModelName $model
+     */
+    public function __construct(ModelName $model)
+    {
+        $this->model = $model;
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  ModelNameCreateRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(ModelNameCreateRequest $request)
+    {
+        $model = $this->model->create($request->input());
+        event(new ModelNameCreatedEvent($model));
+        return $this->respondDataCreated($model);
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @param  ModelNameUpdateRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(ModelNameUpdateRequest $request, $id)
+    {
+        $model = $this->model->find($id);
+
+        $model->update($request->input());
+        event(new ModelNameUpdatedEvent($model));
+
+        return $this->respondDataUpdated($model);
+    }
+
+
+
+}

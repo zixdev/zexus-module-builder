@@ -1,0 +1,5 @@
+<?php
+
+return [
+    // $STUDLY_NAME$ Admin Config
+];
