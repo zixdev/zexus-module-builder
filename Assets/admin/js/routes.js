@@ -1,5 +1,0 @@
-// add routes
-
-export default [
-
-];
