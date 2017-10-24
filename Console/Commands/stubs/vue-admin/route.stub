@@ -1,17 +1,35 @@
-import {VisualBuilder} from './../components/+visual-builder';
+import {Component, ComponentEdit, ComponentShow} from './../components/+Path';
 
 export default [
     {
-        name: 'visual_builder.index',
-        path: '/visual-builder',
-        component: VisualBuilder,
-        meta: { requiresAuth: true, permission: 'view_pages', icon: 'pages', menu: true },
+        name: 'Name.index',
+        path: '/Path',
+        component: Component,
+        meta: { requiresAuth: true, permission: 'view_Permission', icon: 'pages', menu: true },
         children: [
             {
-                name: 'visual_builder.index',
-                path: '/visual-builder',
-                component: VisualBuilder,
-                meta: { requiresAuth: true, permission: 'view_pages', menu: true }
+                name: 'Name.index',
+                path: '/Path',
+                component: Component,
+                meta: { requiresAuth: true, permission: 'view_Permission', menu: true }
+            },
+            {
+                name: 'Name.create',
+                path: '/Path/create',
+                component: ComponentEdit,
+                meta: { requiresAuth: true, permission: 'create_Permission', menu: true }
+            },
+             {
+                name: 'Name.edit',
+                path: '/Path/:id/edit',
+                component: ComponentEdit,
+                meta: { requiresAuth: true, permission: 'edit_Permission', menu: true }
+            },
+            {
+                name: 'Name.show',
+                path: '/Path/:id/show',
+                component: ComponentShow,
+                meta: { requiresAuth: true, permission: 'view_Permission', menu: true }
             }
         ]
     }
