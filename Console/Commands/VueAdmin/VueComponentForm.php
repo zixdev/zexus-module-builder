@@ -1,13 +1,12 @@
 <?php
 
-namespace DummyNamespace;
+namespace Zix\PluginBuilder\Console\Commands\Vue;
 
 use Illuminate\Console\GeneratorCommand;
-use Zix\Core\Console\Generators\Traits\StubGeneratorTrait;
 
-class DummyClass extends GeneratorCommand
+class VueComponentForm extends GeneratorCommand
 {
-    use StubGeneratorTrait;
+
 	/**
 	 * The name and signature of the console command.
 	 *

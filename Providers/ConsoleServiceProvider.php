@@ -19,6 +19,7 @@ use Zix\PluginBuilder\Console\Commands\MakeMiddleware;
 use Zix\PluginBuilder\Console\Commands\MakeMigration;
 use Zix\PluginBuilder\Console\Commands\MakeModel;
 use Zix\PluginBuilder\Console\Commands\MakeTest;
+use Zix\PluginBuilder\Console\Commands\VueAdmin\VueRoutes;
 
 
 /**
@@ -48,7 +49,11 @@ class ConsoleServiceProvider extends ServiceProvider
         MakeProvider::class,
         MakeRequest::class,
         MakeSeeder::class,
-        MakeTest::class
+        MakeTest::class,
+
+
+        // VueJs Admin Generators
+        VueRoutes::class
     ];
 
     /**
