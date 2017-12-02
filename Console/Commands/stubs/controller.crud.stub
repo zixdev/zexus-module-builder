@@ -1,6 +1,6 @@
 <?php namespace DummyNamespace;
 
-use Zix\PluginName\Entities\ModelName;
+use Zix\PluginName\Models\ModelName;
 use Zix\PluginBuilder\Support\Traits\ApiResponses;
 use Zix\PluginBuilder\Support\Traits\CrudControllerTrait;
 use Zix\PluginName\Events\ModelName\ModelNameCreatedEvent;

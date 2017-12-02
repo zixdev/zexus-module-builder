@@ -4,7 +4,7 @@ namespace Zix\PluginBuilder\Console\Commands\Crud;
 
 
 
-class MakeCrudController extends CrudGeneratorCommand
+class MakeCrudControllerCommand extends CrudGeneratorCommand
 {
 
     /**

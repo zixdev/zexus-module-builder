@@ -9,7 +9,7 @@ use Illuminate\Database\Console\Migrations\BaseCommand;
  * Class GenerateApiDocs
  * @package Zix\PluginBuilder\Console\Commands
  */
-class GenerateApiDocs extends BaseCommand
+class GenerateApiDocsCommand extends BaseCommand
 {
 
 	use ConfirmableTrait;

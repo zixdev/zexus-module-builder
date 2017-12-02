@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakePolicy
+ * Class MakeMiddleware
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakePolicy extends GeneratorCommand
+class MakeMiddlewareCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakePolicy extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'zix:make-policy {name : The Policy Name}
-											{module : The Module Name}';
+    protected $signature = 'zix:make-middleware {name : The Middleware Name}
+										        {module : The Module Name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Policy class.';
+    protected $description = 'Create a new Middleware class.';
 
 
     /**
@@ -36,8 +36,8 @@ class MakePolicy extends GeneratorCommand
      */
     public function handle()
     {
-        $this->generatePath = 'Policies';
-        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/policy.stub";
+        $this->generatePath = 'Http/Middleware';
+        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/middleware.stub";
 
         parent::handle();
     }

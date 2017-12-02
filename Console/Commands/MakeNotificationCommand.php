@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeSeeder
+ * Class MakeNotification
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeSeeder extends GeneratorCommand
+class MakeNotificationCommand extends GeneratorCommand
 {
 	use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakeSeeder extends GeneratorCommand
 	 *
 	 * @var string
 	 */
-	protected $signature = 'zix:make-seeder {name : The Seeder Name}
-											{module : The Module Name}';
+	protected $signature = 'zix:make-notification {name : The Notification Name}
+												  {module : The Module Name}';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Create a new Seeder class.';
+	protected $description = 'Create a new Notification class.';
 
 
 	/**
@@ -36,8 +36,8 @@ class MakeSeeder extends GeneratorCommand
 	 */
 	public function handle()
 	{
-		$this->generatePath = 'Database/Seeds';
-		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/seeder.stub";
+		$this->generatePath = 'Notifications';
+		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/notification.stub";
 
         parent::handle();
 	}

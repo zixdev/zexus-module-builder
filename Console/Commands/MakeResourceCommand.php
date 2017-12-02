@@ -11,7 +11,7 @@ use Zix\Core\Console\Generators\Traits\StubGeneratorTrait;
  * Class MakeResource
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeResource extends GeneratorCommand
+class MakeResourceCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
     /**

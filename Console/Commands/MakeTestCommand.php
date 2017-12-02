@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeNotification
+ * Class MakeTest
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeNotification extends GeneratorCommand
+class MakeTestCommand extends GeneratorCommand
 {
 	use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakeNotification extends GeneratorCommand
 	 *
 	 * @var string
 	 */
-	protected $signature = 'zix:make-notification {name : The Notification Name}
-												  {module : The Module Name}';
+	protected $signature = 'zix:make-test {name : The Test Name}
+										  {module : The Module Name}';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Create a new Notification class.';
+	protected $description = 'Create a new Test class.';
 
 
 	/**
@@ -36,8 +36,8 @@ class MakeNotification extends GeneratorCommand
 	 */
 	public function handle()
 	{
-		$this->generatePath = 'Notifications';
-		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/notification.stub";
+		$this->generatePath = 'Tests';
+		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/test.stub";
 
         parent::handle();
 	}

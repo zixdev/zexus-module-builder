@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputOption;
  * Class MakeModel
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeModel extends GeneratorCommand
+class MakeModelCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
 
@@ -40,7 +40,7 @@ class MakeModel extends GeneratorCommand
      */
     public function handle()
     {
-        $this->generatePath = 'Entities';
+        $this->generatePath = 'Models';
         $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/model.stub";
 
         if (parent::handle() !== false) {

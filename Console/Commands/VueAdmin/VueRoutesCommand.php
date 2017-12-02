@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Zix\Core\Console\Generators\Traits\StubGeneratorTrait;
 
-class VueRoutes extends GeneratorCommand
+class VueRoutesCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
 

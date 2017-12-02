@@ -1,6 +1,6 @@
 <?php
 
-namespace Zix\PluginBuilder\Entities;
+namespace Zix\PluginBuilder\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

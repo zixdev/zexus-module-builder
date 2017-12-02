@@ -6,11 +6,12 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeRequest
+ * Class MakeEvent
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeRequest extends GeneratorCommand
+class MakeEventCommand extends GeneratorCommand
 {
+
 	use StubGeneratorTrait;
 
 	/**
@@ -18,16 +19,15 @@ class MakeRequest extends GeneratorCommand
 	 *
 	 * @var string
 	 */
-	protected $signature = 'zix:make-request {name : The Request Name}
-											 {module : The Module Name}';
+	protected $signature = 'zix:make-event {name : The Event Name}
+										{module : The Module Name}';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Create a new Request class.';
-
+	protected $description = 'Create a new Event class.';
 
 	/**
 	 * Execute the console command.
@@ -36,10 +36,9 @@ class MakeRequest extends GeneratorCommand
 	 */
 	public function handle()
 	{
-		$this->generatePath = 'Http/Requests';
-		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/request.stub";
+		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/event.stub";
+		$this->generatePath = 'Events';
 
         parent::handle();
 	}
-
 }

@@ -6,7 +6,7 @@ use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
-class MakeCrud extends GeneratorCommand
+class MakeCrudCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
     /**
@@ -56,7 +56,7 @@ class MakeCrud extends GeneratorCommand
         // 3. Generate Factory @TODO
 
         // 4. Generate Controller + (Request "create/update", Resource "Object, Array", Tests)
-        $this->call("crud:make-controller", [
+        $this->call("zix:make-controller", [
             'name' => $name . "Controller",
             'module' => $plugin,
             'model' => $name,
@@ -79,7 +79,7 @@ class MakeCrud extends GeneratorCommand
             'name' => $name . '/' . $name . "Collection",
             'module' => $plugin,
         ]);
-        
+
         $this->call("crud:make-test", [
             'name' => $name . "ControllerTester",
             'module' => $plugin,

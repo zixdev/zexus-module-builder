@@ -3,24 +3,26 @@
 namespace Zix\PluginBuilder\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Zix\PluginBuilder\Console\Commands\MakeNotification;
-use Zix\PluginBuilder\Console\Commands\MakePolicy;
-use Zix\PluginBuilder\Console\Commands\MakeProvider;
-use Zix\PluginBuilder\Console\Commands\MakeRequest;
-use Zix\PluginBuilder\Console\Commands\MakeResource;
-use Zix\PluginBuilder\Console\Commands\MakeSeeder;
+use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudCommand;
+use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudControllerCommand;
+use Zix\PluginBuilder\Console\Commands\MakeNotificationCommand;
+use Zix\PluginBuilder\Console\Commands\MakePolicyCommand;
+use Zix\PluginBuilder\Console\Commands\MakeProviderCommand;
+use Zix\PluginBuilder\Console\Commands\MakeRequestCommand;
+use Zix\PluginBuilder\Console\Commands\MakeResourceCommand;
+use Zix\PluginBuilder\Console\Commands\MakeSeederCommand;
 use Zix\PluginBuilder\Console\Commands\DatabaseSeedCommand;
-use Zix\PluginBuilder\Console\Commands\GenerateApiDocs;
+use Zix\PluginBuilder\Console\Commands\GenerateApiDocsCommand;
 use Zix\PluginBuilder\Console\Commands\MakeCommand;
-use Zix\PluginBuilder\Console\Commands\MakeEvent;
-use Zix\PluginBuilder\Console\Commands\MakeJob;
-use Zix\PluginBuilder\Console\Commands\MakeListener;
-use Zix\PluginBuilder\Console\Commands\MakeMail;
-use Zix\PluginBuilder\Console\Commands\MakeMiddleware;
-use Zix\PluginBuilder\Console\Commands\MakeMigration;
-use Zix\PluginBuilder\Console\Commands\MakeModel;
-use Zix\PluginBuilder\Console\Commands\MakeTest;
-use Zix\PluginBuilder\Console\Commands\VueAdmin\VueRoutes;
+use Zix\PluginBuilder\Console\Commands\MakeEventCommand;
+use Zix\PluginBuilder\Console\Commands\MakeJobCommand;
+use Zix\PluginBuilder\Console\Commands\MakeListenerCommand;
+use Zix\PluginBuilder\Console\Commands\MakeMailCommand;
+use Zix\PluginBuilder\Console\Commands\MakeMiddlewareCommand;
+use Zix\PluginBuilder\Console\Commands\MakeMigrationCommand;
+use Zix\PluginBuilder\Console\Commands\MakeModelCommand;
+use Zix\PluginBuilder\Console\Commands\MakeTestCommand;
+use Zix\PluginBuilder\Console\Commands\VueAdmin\VueRoutesCommand;
 
 
 /**
@@ -36,25 +38,29 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     protected $commands = [
         DatabaseSeedCommand::class,
-        GenerateApiDocs::class,
+        GenerateApiDocsCommand::class,
         MakeCommand::class,
-        MakeEvent::class,
-        MakeJob::class,
-        MakeListener::class,
-        MakeMail::class,
-        MakeMiddleware::class,
-        MakeMigration::class,
-        MakeModel::class,
-        MakeNotification::class,
-        MakePolicy::class,
-        MakeProvider::class,
-        MakeRequest::class,
-        MakeSeeder::class,
-        MakeTest::class,
-        MakeResource::class,
+        MakeEventCommand::class,
+        MakeJobCommand::class,
+        MakeListenerCommand::class,
+        MakeMailCommand::class,
+        MakeMiddlewareCommand::class,
+        MakeMigrationCommand::class,
+        MakeModelCommand::class,
+        MakeNotificationCommand::class,
+        MakePolicyCommand::class,
+        MakeProviderCommand::class,
+        MakeRequestCommand::class,
+        MakeSeederCommand::class,
+        MakeTestCommand::class,
+        MakeResourceCommand::class,
+
+        // Crud Generators
+        MakeCrudCommand::class,
+        MakeCrudControllerCommand::class,
 
         // VueJs Admin Generators
-        VueRoutes::class
+        VueRoutesCommand::class
     ];
 
     /**

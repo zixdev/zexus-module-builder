@@ -6,11 +6,12 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeMiddleware
+ * Class MakeProvider
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeMiddleware extends GeneratorCommand
+class MakeProviderCommand extends GeneratorCommand
 {
+
     use StubGeneratorTrait;
 
     /**
@@ -18,15 +19,15 @@ class MakeMiddleware extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'zix:make-middleware {name : The Middleware Name}
-										        {module : The Module Name}';
+    protected $signature = 'zix:make-provider {name : The Service Provider Name}
+										      {module : The Module Name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Middleware class.';
+    protected $description = 'Create a new Service Provider.';
 
 
     /**
@@ -36,10 +37,9 @@ class MakeMiddleware extends GeneratorCommand
      */
     public function handle()
     {
-        $this->generatePath = 'Http/Middleware';
-        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/middleware.stub";
+        $this->generatePath = 'Providers';
+        $this->stubPath = 'plugins/PluginBuilder/Console/Commands/stubs/provider.stub';
 
         parent::handle();
     }
-
 }

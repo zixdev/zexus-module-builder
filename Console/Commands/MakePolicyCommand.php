@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeJob
+ * Class MakePolicy
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeJob extends GeneratorCommand
+class MakePolicyCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakeJob extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'zix:make-job {name : The Job Name}
-										 {module : The Module Name}';
+    protected $signature = 'zix:make-policy {name : The Policy Name}
+											{module : The Module Name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Job class.';
+    protected $description = 'Create a new Policy class.';
 
 
     /**
@@ -36,11 +36,10 @@ class MakeJob extends GeneratorCommand
      */
     public function handle()
     {
-        $this->generatePath = 'Jobs';
-        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/job.stub";
+        $this->generatePath = 'Policies';
+        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/policy.stub";
 
         parent::handle();
     }
-
 
 }

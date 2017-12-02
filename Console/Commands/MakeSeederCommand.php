@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeListener
+ * Class MakeSeeder
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeListener extends GeneratorCommand
+class MakeSeederCommand extends GeneratorCommand
 {
 	use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakeListener extends GeneratorCommand
 	 *
 	 * @var string
 	 */
-	protected $signature = 'zix:make-listener {name : The Listener Name}
-											  {module : The Module Name}';
+	protected $signature = 'zix:make-seeder {name : The Seeder Name}
+											{module : The Module Name}';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Create a new Listener class.';
+	protected $description = 'Create a new Seeder class.';
 
 
 	/**
@@ -36,8 +36,8 @@ class MakeListener extends GeneratorCommand
 	 */
 	public function handle()
 	{
-		$this->generatePath = 'Listeners';
-		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/listener.stub";
+		$this->generatePath = 'Database/Seeds';
+		$this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/seeder.stub";
 
         parent::handle();
 	}

@@ -6,10 +6,10 @@ use Illuminate\Console\GeneratorCommand;
 use Zix\PluginBuilder\Console\Generators\Traits\StubGeneratorTrait;
 
 /**
- * Class MakeMail
+ * Class MakeJob
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeMail extends GeneratorCommand
+class MakeJobCommand extends GeneratorCommand
 {
     use StubGeneratorTrait;
 
@@ -18,15 +18,15 @@ class MakeMail extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'zix:make-mail {name : The Mail Name}
-										  {module : The Module Name}';
+    protected $signature = 'zix:make-job {name : The Job Name}
+										 {module : The Module Name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Mail class.';
+    protected $description = 'Create a new Job class.';
 
 
     /**
@@ -36,10 +36,11 @@ class MakeMail extends GeneratorCommand
      */
     public function handle()
     {
-        $this->generatePath = 'Mail';
-        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/mail.stub";
+        $this->generatePath = 'Jobs';
+        $this->stubPath = "plugins/PluginBuilder/Console/Commands/stubs/job.stub";
 
         parent::handle();
     }
+
 
 }

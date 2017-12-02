@@ -10,7 +10,7 @@ use Illuminate\Database\Console\Migrations\BaseCommand;
  * Class MakeMigration
  * @package Zix\PluginBuilder\Console\Commands
  */
-class MakeMigration extends BaseCommand
+class MakeMigrationCommand extends BaseCommand
 {
     use StubGeneratorTrait;
 
