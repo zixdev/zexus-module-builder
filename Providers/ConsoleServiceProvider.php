@@ -7,6 +7,7 @@ use Zix\PluginBuilder\Console\Commands\MakeNotification;
 use Zix\PluginBuilder\Console\Commands\MakePolicy;
 use Zix\PluginBuilder\Console\Commands\MakeProvider;
 use Zix\PluginBuilder\Console\Commands\MakeRequest;
+use Zix\PluginBuilder\Console\Commands\MakeResource;
 use Zix\PluginBuilder\Console\Commands\MakeSeeder;
 use Zix\PluginBuilder\Console\Commands\DatabaseSeedCommand;
 use Zix\PluginBuilder\Console\Commands\GenerateApiDocs;
@@ -50,7 +51,7 @@ class ConsoleServiceProvider extends ServiceProvider
         MakeRequest::class,
         MakeSeeder::class,
         MakeTest::class,
-
+        MakeResource::class,
 
         // VueJs Admin Generators
         VueRoutes::class
