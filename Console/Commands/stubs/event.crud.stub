@@ -4,7 +4,7 @@ namespace DummyNamespace;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
-use Zix\PluginName\Entities\ModelName;
+use Zix\PluginName\Models\ModelName;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;

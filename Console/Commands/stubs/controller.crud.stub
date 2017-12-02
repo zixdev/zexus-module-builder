@@ -1,62 +1,85 @@
 <?php namespace DummyNamespace;
 
-use Zix\PluginName\Models\ModelName;
-use Zix\PluginBuilder\Support\Traits\ApiResponses;
-use Zix\PluginBuilder\Support\Traits\CrudControllerTrait;
-use Zix\PluginName\Events\ModelName\ModelNameCreatedEvent;
-use Zix\PluginName\Events\ModelName\ModelNameUpdatedEvent;
-use Zix\PluginName\Http\Requests\ModelName\ModelNameCreateRequest;
-use Zix\PluginName\Http\Requests\ModelName\ModelNameUpdateRequest;
+use Zix\PluginName\Models;
+use Zix\PluginName\Http\Resources\ModelName as ModelNameResources;
+//use Zix\PluginName\Events\ModelName as ModelNameEvents;
+use Zix\PluginName\Http\Requests\ModelName as ModelNameRequests;
 
 /**
  * Class DummyClass
- * @property ModelName model
+ * @property Models\ModelName model
  * @package Zix\PluginName\Http\Controllers
  */
 class DummyClass
 {
-    use ApiResponses, CrudControllerTrait;
-
     /**
      * TestController constructor.
-     * @param ModelName $model
+     * @param Models\ModelName $model
      */
-    public function __construct(ModelName $model)
+    public function __construct(Models\ModelName $model)
     {
         $this->model = $model;
     }
 
     /**
+     * @param ModelNameRequests\ModelNameShowRequest $request
+     * @return ModelNameResources\ModelNameResourceCollection
+     */
+    public function index(ModelNameRequests\ModelNameShowRequest $request)
+    {
+        return new ModelNameResources\ModelNameResourceCollection(datatables()->of($this->model->query()));
+    }
+
+    /**
+     * @param ModelNameRequests\ModelNameShowRequest $request
+     * @param Models\ModelName $ModelSmallName
+     * @return ModelNameResources\ModelNameResource
+     */
+    public function show(ModelNameRequests\ModelNameShowRequest $request, Models\ModelName $ModelSmallName)
+    {
+        return new ModelNameResources\ModelNameResource($ModelSmallName);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
-     * @param  ModelNameCreateRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param  ModelNameRequests\ModelNameStoreRequest $request
+     * @return ModelNameResources\ModelNameResource
      */
-    public function store(ModelNameCreateRequest $request)
+    public function store(ModelNameRequests\ModelNameStoreRequest $request)
     {
         $model = $this->model->create($request->input());
-        event(new ModelNameCreatedEvent($model));
-        return $this->respondDataCreated($model);
+        //event(new ModelNameEvents\ModelNameStoredEvent($model));
+
+        return new ModelNameResources\ModelNameResource($model);
     }
 
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
-     * @param  ModelNameUpdateRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param  Models\ModelName  $ModelSmallName
+     * @param  ModelNameRequests\ModelNameUpdateRequest $request
+     * @return ModelNameResources\ModelNameResource
      */
-    public function update(ModelNameUpdateRequest $request, $id)
+    public function update(ModelNameRequests\ModelNameUpdateRequest $request, Models\ModelName $ModelSmallName)
     {
-        $model = $this->model->find($id);
+        $ModelSmallName->update($request->input());
+        //event(new ModelNameEvents\ModelNameUpdatedEvent($ModelSmallName));
 
-        $model->update($request->input());
-        event(new ModelNameUpdatedEvent($model));
-
-        return $this->respondDataUpdated($model);
+        return new ModelNameResources\ModelNameResource($ModelSmallName);
     }
 
+    /**
+     * @param ModelNameRequests\ModelNameDestroyRequest $request
+     * @param Models\ModelName $ModelSmallName
+     * @return ModelNameResources\ModelNameResource
+     */
+    public function destroy(ModelNameRequests\ModelNameDestroyRequest $request, Models\ModelName $ModelSmallName)
+    {
+        //event(new ModelNameEvents\ModelNameDestroyedEvent($ModelSmallName));
+        $ModelSmallName->delete();
 
-
+        return new ModelNameResources\ModelNameResource($ModelSmallName);
+    }
 }

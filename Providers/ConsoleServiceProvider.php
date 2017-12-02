@@ -5,6 +5,7 @@ namespace Zix\PluginBuilder\Providers;
 use Illuminate\Support\ServiceProvider;
 use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudCommand;
 use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudControllerCommand;
+use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudEventCommand;
 use Zix\PluginBuilder\Console\Commands\MakeNotificationCommand;
 use Zix\PluginBuilder\Console\Commands\MakePolicyCommand;
 use Zix\PluginBuilder\Console\Commands\MakeProviderCommand;
@@ -58,6 +59,7 @@ class ConsoleServiceProvider extends ServiceProvider
         // Crud Generators
         MakeCrudCommand::class,
         MakeCrudControllerCommand::class,
+        MakeCrudEventCommand::class,
 
         // VueJs Admin Generators
         VueRoutesCommand::class

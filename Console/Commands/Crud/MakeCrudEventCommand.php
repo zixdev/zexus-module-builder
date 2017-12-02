@@ -3,7 +3,7 @@
 namespace Zix\PluginBuilder\Console\Commands\Crud;
 
 
-class MakeCrudEvent extends CrudGeneratorCommand
+class MakeCrudEventCommand extends CrudGeneratorCommand
 {
 
 	/**
