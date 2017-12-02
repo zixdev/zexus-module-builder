@@ -55,12 +55,13 @@ class MakeCrud extends GeneratorCommand
 
         // 3. Generate Factory @TODO
 
-        // 4. Generate Controller + (Request "create/update") + (Test)
+        // 4. Generate Controller + (Request "create/update", Resource "Object, Array", Tests)
         $this->call("crud:make-controller", [
             'name' => $name . "Controller",
             'module' => $plugin,
             'model' => $name,
         ]);
+
         $this->call("zix:make-request", [
             'name' => $name . '/' . $name . "CreateRequest",
             'module' => $plugin,
@@ -69,6 +70,16 @@ class MakeCrud extends GeneratorCommand
             'name' => $name . '/' . $name . "UpdateRequest",
             'module' => $plugin,
         ]);
+
+        $this->call("zix:make-resource", [
+            'name' => $name . '/' . $name . "UpdateRequest",
+            'module' => $plugin,
+        ]);
+        $this->call("zix:make-resource", [
+            'name' => $name . '/' . $name . "Collection",
+            'module' => $plugin,
+        ]);
+        
         $this->call("crud:make-test", [
             'name' => $name . "ControllerTester",
             'module' => $plugin,
