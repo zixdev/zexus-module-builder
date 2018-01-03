@@ -2,13 +2,13 @@
 
 namespace DummyNamespace;
 
-use Illuminate\Database\Eloquent\Model;
+use Zix\Core\Models\BaseModel;
 
 /**
  * Class DummyClass
  * @package DummyNamespace
  */
-class DummyClass extends Model
+class DummyClass extends BaseModel
 {
     /**
      * @var array
