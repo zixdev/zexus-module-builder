@@ -87,7 +87,7 @@ class DatabaseSeedCommand extends BaseCommand
 
     private function getSeederClass($module)
     {
-        return "Zix\\" . $module . "\\Database\\Seeders\\" . $module . "DataBaseSeeder";
+        return "Zix\\" . $module . "\\Database\\Seeds\\" . $module . "DataBaseSeeder";
     }
 
 

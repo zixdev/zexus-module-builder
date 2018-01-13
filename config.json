@@ -8,7 +8,8 @@
   "order": 0,
   "providers": [
     "Zix\\PluginBuilder\\Providers\\PluginBuilderServiceProvider",
-    "Zix\\PluginBuilder\\Providers\\ConsoleServiceProvider"
+    "Zix\\PluginBuilder\\Providers\\ConsoleServiceProvider",
+    "Zix\\PluginBuilder\\Providers\\EventServiceProvider"
   ],
   "aliases": [
 
