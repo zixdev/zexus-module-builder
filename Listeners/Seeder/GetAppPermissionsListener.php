@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Zix\Core\Events\Seeder\GetAppPermissions;
 
-class AppPermissionsCreateListener
+class GetAppPermissionsListener
 {
     /**
      * Handle the event.
