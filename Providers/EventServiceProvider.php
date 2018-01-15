@@ -3,7 +3,7 @@
 namespace Zix\PluginBuilder\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Zix\Core\Events\Seeder\AppPermissionsCreate;
+use Zix\Core\Events\Seeder\GetAppPermissions;
 use Zix\PluginBuilder\Listeners\Seeder\AppPermissionsCreateListener;
 
 class EventServiceProvider extends ServiceProvider
@@ -14,7 +14,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        AppPermissionsCreate::class => [
+        GetAppPermissions::class => [
             AppPermissionsCreateListener::class,
         ]
     ];

@@ -5,17 +5,17 @@ namespace Zix\PluginBuilder\Listeners\Seeder;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Zix\Core\Events\Seeder\AppPermissionsCreate;
+use Zix\Core\Events\Seeder\GetAppPermissions;
 
 class AppPermissionsCreateListener
 {
     /**
      * Handle the event.
      *
-     * @param AppPermissionsCreate $event
+     * @param GetAppPermissions $event
      * @return void
      */
-    public function handle(AppPermissionsCreate $event)
+    public function handle(GetAppPermissions $event)
     {
         $event->collection->push('plugins');
     }
