@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudCommand;
 use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudControllerCommand;
 use Zix\PluginBuilder\Console\Commands\Crud\MakeCrudEventCommand;
+use Zix\PluginBuilder\Console\Commands\MakeModule;
 use Zix\PluginBuilder\Console\Commands\MakeNotificationCommand;
 use Zix\PluginBuilder\Console\Commands\MakePolicyCommand;
 use Zix\PluginBuilder\Console\Commands\MakeProviderCommand;
@@ -38,6 +39,7 @@ class ConsoleServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
+        MakeModule::class,
         DatabaseSeedCommand::class,
         GenerateApiDocsCommand::class,
         MakeCommand::class,
